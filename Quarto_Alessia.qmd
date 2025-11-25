@@ -4,6 +4,7 @@ author: "Alessia Patti"
 date: "2025-11-24"
 bibliography: bibliography.bib
 csl: "apa.csl"
+self-contained: TRUE 
 format:
     html:
       toc: true
@@ -16,11 +17,11 @@ output: html_document
 ## Vediamo il dataset
 
 ```{r}
-install.packages("readxl")
 library(readxl)
 Sara = read_excel("Sara_dataset.xls")
 Sara
 ```
+
 # Heart rate e ansia 
 
 ## Heart rate e ansia: statistiche descrittive 
