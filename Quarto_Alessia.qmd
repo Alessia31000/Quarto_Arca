@@ -4,17 +4,19 @@ author: "Alessia Patti"
 date: "2025-11-24"
 bibliography: bibliography.bib
 csl: "apa.csl"
-embed-resources: true 
+embed-resources: true
+crossref:
+  fig-prefix: "Figura"
 format:
-    html:
-      toc: true
-      toc-title: Contents
-      toc-location: left
-      number-sections: true
-output: html_document
+  html:
+    crossref: {}    
+    toc: true
+    toc-title: Contenuti 
+    toc-location: left
+    number-sections: true
 ---
 
-## Vediamo il dataset
+# Vediamo il dataset
 
 ```{r}
 library(readxl)
@@ -22,7 +24,53 @@ Sara = read_excel("Sara_dataset.xls")
 Sara
 ```
 
-# Heart rate e ansia 
+# Heart rate e ansia
+
+
+## Immagini 
+
+Variabili: <span style="color:pink;">Heart rate</span> e <span style="color:green;">ansia</span>
+
+
+::: {.figure}
+![Heart rate](HR.jpg){#fig-hr width="150"}
+:::
+
+
+::: {.figure}
+![Ansia](ansia.jpg){#fig-ansia width="130"}
+:::
+
+
+## Una rappresentazione dei dati 
+
+```{r}
+#| label: hr-plot
+#| fig-cap: "Livelli di heart rate nelle tre condizioni"
+#| fig-width: 7
+#| fig-height: 5 
+
+boxplot(
+  Sara$hr_base, Sara$hr_pre, Sara$hr_post,
+  names = c("HR Base","HR Pre","HR Post"),
+  col = "pink"
+)  
+```
+
+
+```{r}
+#| label: ansia-plot 
+#| fig-cap: "Livelli di ansia nelle tre condizioni"
+#| fig-width: 7
+#| fig-height: 5 
+
+boxplot(
+  Sara$anx_base, Sara$anx_pre, Sara$anx_post, 
+  names = c("Ansia base","Ansia pre","Ansia post"),
+  col = "green"
+)
+```
+
 
 ## Heart rate e ansia: statistiche descrittive 
 
@@ -40,6 +88,7 @@ sd(Sara$anx_base)
 sd(Sara$anx_pre)
 sd(Sara$anx_post)
 ```
+
 ### Heart rate e ansia: una descrizione delle statistiche descrittive 
 
 La variabile "Heart Rate" rappresenta l'auto-misurazione del battito cardiaco in diverse situazioni, ovvero: in condizioni normali (HR base), prima di un test (HR pre-test) e dopo un test (HR post-test).
@@ -80,13 +129,6 @@ Ansia:
 
 ::::
 
-### Immagini 
-
-Variabili: <span style="color:pink;">Heart rate</span> e <span style="color:green;">ansia</span>
-
-![](HR.jpg){.absolute bottom=20 right=320 width="150" height="80" fig-align="center"}
-![](ansia.jpg){.absolute bottom=20 right=320 width="130" height="200" fig-align="center"}
-
 
 ## Letteratura scientifica 
 
@@ -94,5 +136,5 @@ Secondo la letteratura scientifica, una situazione di stress psicologico provoca
 
 # Conclusioni 
 
-In questo lavoro sono state considerate le variabili relative all'Heart rate e all'ansia, confrontandone i livelli prima e dopo l'esecuzione di un test e discutendo, infine, i risultati tenendo in considerazione la letteratura scientifica presente.  
+In questo lavoro sono state considerate le variabili relative all'Heart rate (Figura @fig-hr) e all'ansia (Figura @fig-ansia), confrontandone i livelli prima e dopo l'esecuzione di un test e discutendo, infine, i risultati tenendo in considerazione la letteratura scientifica presente.  
 
