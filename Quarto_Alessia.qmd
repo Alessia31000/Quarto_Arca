@@ -4,7 +4,7 @@ author: "Alessia Patti"
 date: "2025-11-24"
 bibliography: bibliography.bib
 csl: "apa.csl"
-self-contained: TRUE 
+embed-resources: true 
 format:
     html:
       toc: true
@@ -86,6 +86,8 @@ Variabili: <span style="color:pink;">Heart rate</span> e <span style="color:gree
 
 ![](HR.jpg){.absolute bottom=20 right=320 width="150" height="80" fig-align="center"}
 ![](ansia.jpg){.absolute bottom=20 right=320 width="130" height="200" fig-align="center"}
+
+
 ## Letteratura scientifica 
 
 Secondo la letteratura scientifica, una situazione di stress psicologico provoca un aumento dell'Heart rate e dei livelli di ansia. Lo studio di @trotman2019associations, nello specifico, ha dimostrato che la frequenza cardiaca percepita, piuttosto che quella effettiva, è più strettamente associata all'intensità dell'ansia in una condizione di stress psicologico [@trotman2019associations]. 
