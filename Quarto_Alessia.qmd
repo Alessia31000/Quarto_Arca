@@ -1,0 +1,95 @@
+---
+title: "Corso RMarkdown e Quarto"
+author: "Alessia Patti"
+date: "2025-11-24"
+bibliography: bibliography.bib
+csl: "apa.csl"
+format:
+    html:
+      toc: true
+      toc-title: Contents
+      toc-location: left
+      number-sections: true
+output: html_document
+---
+
+## Vediamo il dataset
+
+```{r}
+install.packages("readxl")
+library(readxl)
+Sara = read_excel("Sara_dataset.xls")
+Sara
+```
+# Heart rate e ansia 
+
+## Heart rate e ansia: statistiche descrittive 
+
+```{r}
+summary(Sara$hr_base)
+summary(Sara$hr_pre)
+summary(Sara$hr_post)
+sd(Sara$hr_base)
+sd(Sara$hr_pre)
+sd(Sara$hr_post)
+summary(Sara$anx_base)
+summary(Sara$anx_pre)
+summary(Sara$anx_post)
+sd(Sara$anx_base)
+sd(Sara$anx_pre)
+sd(Sara$anx_post)
+```
+### Heart rate e ansia: una descrizione delle statistiche descrittive 
+
+La variabile "Heart Rate" rappresenta l'auto-misurazione del battito cardiaco in diverse situazioni, ovvero: in condizioni normali (HR base), prima di un test (HR pre-test) e dopo un test (HR post-test).
+
+Nel seguente dataset, l'Heart Rate di base ha media 72.27 e deviazione standard 3.22, l'Heart Rate pre-test ha media 73.85 e deviazione standard 5.13 e, infine, l'Heart Rate post-test ha media pari a 72.8 e deviazione standard pari a 4.74.
+
+La variabile "Ansia" rappresenta i livelli di ansia riportati dal soggetto ad un test sull'ansia in condizioni normali (ansia di base), prima di un test (ansia pre-test) e dopo un test (ansia post-test). 
+
+Nel dataset riportato, l'ansia di base ha media 18.43 e deviazione standard 4.33, l'ansia pre-test ha media 19.58 e deviazione standard 6.43, mentre l'ansia post-test ha media 19.4 e deviazione standard 4.77. 
+
+### Un riassunto delle statistiche descrittive (media e deviazione standard) di Heart rate e ansia 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+Heart rate:
+
+- Base: m=72.27 ; ds=3.22 
+
+- Pre-test: m=73.85 ; ds=5.13
+
+- Post-test: m=72.8 ; ds=4.74
+
+:::
+
+::: {.column width="50%"}
+
+Ansia:
+
+- Base: m=18.43 ; ds=4.33 
+
+- Pre-test: m=19.58 ; ds=6.43 
+
+- Post-test: m=19.4 ; 4.77 
+
+:::
+
+::::
+
+### Immagini 
+
+Variabili: <span style="color:pink;">Heart rate</span> e <span style="color:green;">ansia</span>
+
+![](HR.jpg){.absolute bottom=20 right=320 width="150" height="80" fig-align="center"}
+![](ansia.jpg){.absolute bottom=20 right=320 width="130" height="200" fig-align="center"}
+## Letteratura scientifica 
+
+Secondo la letteratura scientifica, una situazione di stress psicologico provoca un aumento dell'Heart rate e dei livelli di ansia. Lo studio di @trotman2019associations, nello specifico, ha dimostrato che la frequenza cardiaca percepita, piuttosto che quella effettiva, è più strettamente associata all'intensità dell'ansia in una condizione di stress psicologico [@trotman2019associations]. 
+
+# Conclusioni 
+
+In questo lavoro sono state considerate le variabili relative all'Heart rate e all'ansia, confrontandone i livelli prima e dopo l'esecuzione di un test e discutendo, infine, i risultati tenendo in considerazione la letteratura scientifica presente.  
+
