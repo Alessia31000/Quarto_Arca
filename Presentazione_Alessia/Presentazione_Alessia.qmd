@@ -1,0 +1,262 @@
+---
+title: "An Investigation of the Factor Structure of the Beck Depression Inventory-II in Anorexia Nervosa (Samantha Fuss, Kathryn Trottier & Jacqueline)"
+author: "Alessia Patti"
+format: 
+  revealjs: 
+    theme: beige
+    logo: logo.png
+    code-fold: true
+bibliography: bibliography.bib 
+csl: apa.csl 
+toc: true
+toc-title: Indice dei contenuti 
+embed-resources: true 
+slide-number: c/t
+execute:
+  echo: true
+include-in-header: 
+  - text: |
+      <style>
+      #title-slide .title {
+        font-size: 2em;
+        color : red;
+      }
+      .slide-logo {
+        height: 80px !important;
+        max-height: none !important;
+        position: absolute !important;
+        bottom: unset !important;
+        right: unset !important;
+        top: 10px !important;
+        left: 10px !important;
+      }
+      </style>
+  - text: |
+      <style>
+      .big-table table {
+        font-size: 1.5em !important;
+      }
+      </style>
+---
+
+## **INTRODUZIONE** {.smaller}   
+
+<div class="fragment fade-in">
+
+Il **presente studio** si concentra sull'analisi della struttura fattoriale del *Beck Depression Inventory-II (BDI-II)* in pazienti con *anoressia nervosa (AN)* in trattamento ospedaliero.
+
+</div>
+
+. . .
+
+<div class="fragment fade-in">
+
+::: {style="text-align: center; font-size: 1.5em; color: red;"}
+**Nessuno studio precedente**, infatti, ha analizzato la struttura fattoriale del BDI-II nei DCA. 
+:::
+
+</div>
+
+---
+
+## Una definizione di anoressia nervosa {.smaller}
+
+<div class="fragment fade-right">
+
+L'**anoressia nervosa** è un disturbo del comportamento alimentare caratterizzato da una restrizione dell'assunzione di cibo, che porta a un peso corporeo significativamente basso in relazione all'età, al sesso e allo stato di salute. 
+
+</div>
+
+. . . 
+
+<div class="fragment fade-right">
+
+Le persone affette da questo disturbo nutrono una ***paura intensa** di aumentare di peso o di diventare grasse*, e presentano una ***percezione distorta** della propria immagine corporea*, attribuendo un'***importanza eccessiva** al peso e alla forma del corpo nella valutazione di sé*.
+
+</div>
+
+:::{.footer}
+
+Criteri diagnostici secondo il DSM-IV-TR, che include anche quello relativo all'amenorrea 
+
+:::
+
+---
+
+## DCA e sintomi depressivi {.smaller} 
+
+<div class="fragment fade-down">
+
+::: {style="text-align: center; font-size: 1.1em; color: red;"}
+
+La **coesistenza** tra ***disturbi del comportamento alimentare (DCA)*** e ***sintomi depressivi*** è ben documentata all'interno della letteratura scientifica presente: 
+
+::: 
+
+</div>
+
+::: incremental
+
+* Le persone con DCA mostrano **tassi più alti di Disturbo Depressivo Maggiore (MDD)** rispetto alla popolazione generale. 
+
+* Circa il **40%** degli individui con DCA soddisfa i criteri per MDD vs **23.9%** nella popolazione generale [@godart2007comorbidity].  
+
+* Nei pazienti con **anoressia nervosa**, i tassi di depressione sono ancora più elevati - stimati tra il **50% e il 70%** [@wade2000anorexia; @raastam1995anorexia]. 
+
+:::
+
+---
+
+## **OBIETTIVI DELLO STUDIO** {.smaller data-transition="convex"} 
+
+1. ***Obiettivo principale*** dello studio: 
+Analisi della struttura fattoriale del BDI-II tra individui che soffrono di anoressia nervosa. 
+
+2. **Secondo obiettivo**:
+Esaminare i cambiamenti nei sintomi depressivi relativamente ai fattori identificati dopo un trattamento ospedaliero per anoressia nervosa per fornire delle evidenze a supporto della validità di costrutto dello strumento nella popolazione AN.
+
+3. **Terzo obiettivo**:
+
+* Indagare l'utilità predittiva dei fattori del BDI-II identificati nella fase di pre-trattamento sull'esito del ripristino del peso dopo il trattamento ospedaliero. 
+
+* Indagare l'utilità predittiva del ripristino del peso sui cambiamenti nei punteggi dei fattori BDI-II dopo il trattamento ospedaliero.
+
+## **METODOLOGIA: IL CAMPIONE** {.smaller}
+
+* **Composizione del campione**:
+**30 individui** in trattamento ospedaliero per anoressia nervosa all'interno dell'*Eating Disorders Program* tra il 1997 e il 2013, presso il Toronto General Hospital.
+
+    - **Tipo di trattamento**: 
+    Principalmente **cognitivo-comportamentale**; in aggiunta, i pazienti                 partecipavano ad una varietà di **gruppi manual-based**.
+    
+    - **Obiettivi del trattamento**: stabilizzazione medica, riabilitazione               nutrizionale, ripristino del peso corporeo, alimentazione normalizzata attraverso     pasti supportati dallo staff, abbandono di condotte disfunzionali (di                 eliminazione, abbuffate, esercizio fisico eccessivo), passaggio allo stato di         **ricovero diurno**. 
+
+* **Criterio di inclusione dei partecipanti**: 
+Soddisfare i **criteri diagnostici** del **DSM-IV-TR** relativi all'**anoressia nervosa** al momento del ricovero.
+È stata utilizzata la versione abbreviata (solo items diagnostici) dell'intervista "***Eating Disorder Examination***" [@cooper1987eating]. 
+
+---
+
+## **METODOLOGIA: IL CAMPIONE** {.smaller .unlisted}
+
+***Più nello specifico...***
+
+**Numerosità campionaria**: **30** individui, di cui: **23 donne** e **7 uomini**. 
+
+```{r}
+valori = c(76.7,23.3)
+etichette = c("Donne","Uomini")
+
+pie(
+  valori, 
+  labels = paste0(etichette, " (", valori, "%)"), 
+  col = c("orange","yellow"), 
+  main = "Distribuzione del campione"  
+) 
+```
+
+## **METODOLOGIA: IL CAMPIONE** {.unlisted .smaller}
+
+***Più nello specifico...***
+
+```{.r code-line-numbers="28,29,30,31"} 
+
+Età = c(13.75, 14.67, 15.59, 16.50, 17.42, 18.33, 19.25, 20.16, 21.08, 21.99, 22.91, 23.83, 24.74, 25.66, 26.57, 27.49, 28.40, 29.32, 30.23, 31.15, 32.06, 32.98, 33.90, 34.81, 35.73, 36.64, 37.56, 38.47, 39.39, 40.31)
+
+IMC_ricovero = c(11.78, 11.98, 12.19, 12.40, 12.61, 12.82, 13.02, 13.23, 13.44, 13.65, 13.85, 14.06, 14.27, 14.48, 14.69, 14.89, 15.10, 15.31, 15.52, 15.73, 15.93, 16.14, 16.35, 16.56, 16.76, 16.97, 17.18, 17.39, 17.60, 17.80)
+
+Durata_trattamento = c(1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 55.9, 55.9, 55.9, 55.9, 55.9)
+
+media1 = mean(Età)
+media2 = mean(IMC_ricovero)
+media3 = mean(Durata_trattamento)
+
+media1 = round(media1, 2)
+media2 = round(media2, 2)
+media3 = round(media3, 2)
+
+sd1 = sd(Età)
+sd2 = sd(IMC_ricovero)
+sd3 = sd(Durata_trattamento)
+
+sd1 = round(sd1, 2)
+sd2 = round(sd2, 2)
+sd3 = round(sd3, 2)
+
+variabili = c("Età","IMC_ricovero","Durata_trattamento")
+medie = c(media1,media2,media3)
+deviazioni_standard = c(sd1,sd2,sd3)
+
+tabella = data.frame(
+  Variabile = variabili, 
+  Media = medie, 
+  Deviazione_standard = deviazioni_standard)
+
+tabella 
+```
+
+## **METODOLOGIA: IL CAMPIONE** {.unlisted}
+
+***Più nello specifico...***
+
+```{r class.output="big-table"} 
+
+Età = c(13.75, 14.67, 15.59, 16.50, 17.42, 18.33, 19.25, 20.16, 21.08, 21.99, 22.91, 23.83, 24.74, 25.66, 26.57, 27.49, 28.40, 29.32, 30.23, 31.15, 32.06, 32.98, 33.90, 34.81, 35.73, 36.64, 37.56, 38.47, 39.39, 40.31)
+
+IMC_ricovero = c(11.78, 11.98, 12.19, 12.40, 12.61, 12.82, 13.02, 13.23, 13.44, 13.65, 13.85, 14.06, 14.27, 14.48, 14.69, 14.89, 15.10, 15.31, 15.52, 15.73, 15.93, 16.14, 16.35, 16.56, 16.76, 16.97, 17.18, 17.39, 17.60, 17.80)
+
+Durata_trattamento = c(1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 1.72, 55.9, 55.9, 55.9, 55.9, 55.9)
+
+media1 = mean(Età)
+media2 = mean(IMC_ricovero)
+media3 = mean(Durata_trattamento)
+
+media1 = round(media1, 2)
+media2 = round(media2, 2)
+media3 = round(media3, 2)
+
+sd1 = sd(Età)
+sd2 = sd(IMC_ricovero)
+sd3 = sd(Durata_trattamento)
+
+sd1 = round(sd1, 2)
+sd2 = round(sd2, 2)
+sd3 = round(sd3, 2)
+
+variabili = c("Età","IMC_ricovero","Durata_trattamento")
+medie = c(media1,media2,media3)
+deviazioni_standard = c(sd1,sd2,sd3)
+
+tabella = data.frame(
+  Variabile = variabili, 
+  Media = medie, 
+  Deviazione_standard = deviazioni_standard)
+
+tabella 
+```
+
+## **METODOLOGIA: GLI STRUMENTI** {auto-animate="true"}
+
+***Beck Depression Inventory-II (BDI-II)***
+
+![](bdi.png){fig-align="center" width="450" height="450"}
+
+## **METODOLOGIA: GLI STRUMENTI** {.unlisted .smaller .nonincremental auto-animate="true"}
+
+***Beck Depression Inventory-II (BDI-II)***
+
+- **Versione rivista del BDI** (versione originale)
+
+- Questionario **self-report** 
+
+- **21 items**: valutano i sintomi della depressione nelle ultime due settimane (*Disturbo Depressivo Maggiore* secondo il *DSM-IV* e il *DSM-5*)
+
+## **CONCLUSIONE**
+
+<div class="fragment fade-left">
+
+![](fine.jpg){fig-align="center"}
+</div>
+
+## **REFERENCES** {.smaller}
+
